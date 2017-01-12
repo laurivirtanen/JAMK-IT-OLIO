@@ -10,8 +10,9 @@ namespace JAMK.IT
     {
         static void Main()
         {
-            Lottery.PlayLotto();
-            BlackJack.PlayBlackJack();
+            /*Lottery.PlayLotto();
+            BlackJack.PlayBlackJack();*/
+            EkaVko.Eka();
         }
     }
 }
