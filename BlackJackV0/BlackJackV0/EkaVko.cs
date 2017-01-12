@@ -6,8 +6,9 @@ namespace JAMK.IT
     {
         public static void Eka()
         {
-            teht1();//DONE
-            teht2();//TODO
+            /*
+            teht1();
+            teht2();
             teht3();
             teht4();
             teht5();
@@ -16,6 +17,15 @@ namespace JAMK.IT
             teht8();
             teht9();
             teht10();
+            teht11();
+            teht12();
+            teht13();
+            teht14();
+            teht15();
+            teht16();
+            teht17();
+            teht18();*/
+            teht19();
         }
 
         static void teht1()
@@ -197,6 +207,324 @@ namespace JAMK.IT
                 if (IntArray[i] % 2 == 0) { Console.WriteLine("HEP"); }
             }
 
+        }
+        static void teht11()
+        {
+            /*  Tee kahden sisäkkäisen for-silmukan avulla ohjelma, joka tulostaa seuraavanlaisen kuvion:
+                *
+                **
+                ***
+                ****
+                *****
+                Käyttäjä antaa syötteenä tähtirivien lukumäärän. Yllä olevassa esimerkissä käyttäjä on syöttänyt luvun 5.*/
+
+            Console.WriteLine("\n\n------ 11 TEHTÄVÄ -----");
+            Console.WriteLine("Anna kokonaisluku: ");
+            int Luku = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= Luku; i++){
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.Write("\n");
+            }
+        }
+        static void teht12()
+        {
+            /* Tee ohjelma, joka kysyy käyttäjältä 5 kokonaislukua. Luvut tulee sijoittaa taulukkoon.
+            Ohjelman tulee tulostaa annetut luvut käänteisessä järjestyksessä.*/
+            Console.WriteLine("\n\n------ 12 TEHTÄVÄ -----");
+            Console.WriteLine("Anna 5 kokonaisluku: ");
+            const int Amount = 5;
+            int[] IntArray = new int[Amount];
+
+            for (int i = 0; i < Amount; i++)
+            {
+                IntArray[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Suuruusjärjestyksessä: ");
+            Array.Sort(IntArray);
+            for (int i = Amount-1; i >= 0; i--)
+            {
+                Console.WriteLine(IntArray[i]);
+            }
+
+        }
+        static void teht13()
+        {
+            /* Mäkihypyssä käytetään viittä arvostelutuomaria. Kirjoita ohjelma, joka kysyy arvostelupisteet yhdelle hypylle ja tulostaa tyylipisteiden summan siten, 
+            että summasta on vähennetty pois pienin ja suurin tyylipiste.*/
+            Console.WriteLine("\n\n------ 13 TEHTÄVÄ -----");
+            Console.WriteLine("Anna 5 kokonaisluku: ");
+            const int Amount = 5;
+            int[] IntArray = new int[Amount];
+
+            for (int i = 0; i < Amount; i++)
+            {
+                IntArray[i] = int.Parse(Console.ReadLine());
+            }
+            Array.Sort(IntArray);
+            int Summa = 0;
+            for (int i = Amount-2; i > 0; i--)
+            {
+                Summa += IntArray[i];
+            }
+
+            Console.WriteLine(Summa);
+        }
+        static void teht14()
+        {
+            /* Kirjoita ohjelma, joka pyytää käyttäjältä opiskelijoiden arvosanat 0-5 ohjelmointi-opintojaksosta (voit itse päättää lopetusehdon). 
+            Tulosta arvosanajakauma käyttäen tähtimerkkejä seuraavasti:*/
+            Console.WriteLine("\n\n------ 14 TEHTÄVÄ -----");
+            Console.WriteLine("Anna opiskelijoiden arvosanat ohjelmointi opintojaksosta: ");
+            int Arvosana = 1;
+            int arvosana0 = 0;
+            int arvosana1 = 0;
+            int arvosana2 = 0;
+            int arvosana3 = 0;
+            int arvosana4 = 0;
+            int arvosana5 = 0;
+
+            while (Arvosana >= 0)
+            {
+                Console.WriteLine("Anna numero");
+                Arvosana = int.Parse(Console.ReadLine());
+                switch (Arvosana)
+                {
+                    case 0:
+                        arvosana0++;
+                        break;
+                    case 1:
+                        arvosana1++;
+                        break;
+                    case 2:
+                        arvosana2++;
+                        break;
+                    case 3:
+                        arvosana3++;
+                        break;
+                    case 4:
+                        arvosana4++;
+                        break;
+                    case 5:
+                        arvosana5++;
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
+            Console.WriteLine("Arvosanat:");
+            Console.Write("0:");
+            for (int i = 0; i < arvosana0; i++)
+            {
+                Console.Write("*");
+            }
+            Console.Write("\n1:");
+            for (int i = 0; i < arvosana1; i++)
+            {
+                Console.Write("*");
+            }
+
+            Console.Write("\n2:");
+            for (int i = 0; i < arvosana2; i++)
+            {
+                Console.Write("*");
+            }
+
+            Console.Write("\n3:");
+            for (int i = 0; i < arvosana3; i++)
+            {
+                Console.Write("*");
+            }
+            Console.Write("\n4:");
+            for (int i = 0; i < arvosana4; i++)
+            {
+                Console.Write("*");
+            }
+            Console.Write("\n5:");
+            for (int i = 0; i < arvosana5; i++)
+            {
+                Console.Write("*");
+            }
+            Console.Write("\n");
+
+
+        }
+        static void teht15()
+        {
+            /*Tee ohjelma, joka tulostaa seuraavanlaisen kuvion.Kysy käyttäjältä puunkorkeus käytä juurena kaksi korkeuden yksikkö. Anna Luku > 7[Enter]
+                        *
+                       ***
+                      *****
+                     *******
+                    *********
+                        *
+                        *                       */
+            Console.WriteLine("\n\n------ 15 TEHTÄVÄ -----");
+            Console.WriteLine("Anna kokonaisluku:  ");
+            int Luku = int.Parse(Console.ReadLine());
+            int Luku2 = 1;
+            int Luku3 = Luku-2;
+            int TreeStump = Luku3;
+
+
+            for (int i = 0; i < Luku-2; i++)
+            {
+                //tyhjä tila vasemmalle
+                for (int j = 0; j < Luku3; j++)
+                {
+                    Console.Write(" ");
+                }
+                //tulostaa kuusen oksat
+                for (int x = 0; x < Luku2; x++)
+                {
+                    Console.Write("*");
+                }
+                Luku2 += 2;
+                Luku3 -=1;
+                Console.Write("\n");
+            }
+            // tekee kuusen jalan
+            for (int i = 0; i < 2; i++)
+                {
+                for (int j = 0; j < TreeStump; j++)
+                {
+                    Console.Write(" ");
+                }
+                Console.WriteLine("*");
+            }
+
+
+        }
+        static void teht16()
+        {
+            /*Tee ohjelma, joka arpoo satunnaisluvun väliltä 0-100. Käytä C#:n Random -luokkaa. 
+            Tämän jälkeen ohjelman käyttäjää kehoitetaan arvaaman arvottu luku. Ohjelman tulee antaa vihje arvauksen jälkeen onko arvottu luku pienemäi vai suurempi. 
+            Tämän jälkeen vihjeitä toistetaan kunnes käyttäjä arvaa oikean luvun. Tulosta lopuksi arvausten määrä näytölle. 
+            PS Satunnaislukujen arpomisesta tietokoneella löytyy mielenkiintoista luettavaa esimerkiksi tästä artikkelista: Computers are lousy random number generators. */
+            Console.WriteLine("\n\n------ 16 TEHTÄVÄ -----");
+            Console.WriteLine("Yritä arvata koneen arpoma kokonaisluku 0 ja 100 väliltä:  ");
+            Random rand = new Random();
+            int Answer=rand.Next(0, 100);
+            int UserGuess = 150;
+            int Guesses = 0;
+
+            while(UserGuess != Answer)
+            {
+                UserGuess = int.Parse(Console.ReadLine());
+                Guesses++;
+                if (UserGuess > Answer)
+                {
+                    Console.WriteLine("Lukusi on suurempi kuin oikea vastaus");
+                }
+                else if (UserGuess < Answer)
+                {
+                    Console.WriteLine("Lukusi on pienempi kuin oikea vastaus");
+                }
+                else
+                    Console.WriteLine("Oikea vastaus!");
+            }
+
+            Console.WriteLine("Tarvitsit {0} arvausta.", Guesses);
+
+
+        }
+        static void teht17()
+        {
+            /*Tee ohjelma, joka lajittelee kahdessa kokonaislukutaulukossa olevat alkiot 
+            suurusjärjestykseen kolmanteen kokonaislukutaulukkoon. Tulosta lopuksi lajitellun taulukon sisältö. */
+            Console.WriteLine("\n\n------ 17 TEHTÄVÄ -----");
+
+            int[] FirstArray = { 10, 20, 30, 40, 50 };
+            int[] SecondArray = { 5, 15, 25, 35, 45 };
+            int[] ThirdArray = new int[10];
+            FirstArray.CopyTo(ThirdArray, 0);
+            SecondArray.CopyTo(ThirdArray, 5);
+
+            Array.Sort(ThirdArray);
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(ThirdArray[i]);
+            }
+        }
+        static void teht18()
+        {
+            /*Tee ohjelma, joka kysyy käyttäjältä merkkijonon (lause). 
+            Sovelluksen tulee ilmoittaa käyttäjälle oliko annettu merkkijono palidromi. */
+            Console.WriteLine("\n\n------ 18 TEHTÄVÄ -----");
+            Console.WriteLine("Anna merkkijono palindromi tarkastusta varten");
+
+            string PalindromeSt = Console.ReadLine();
+            int length = PalindromeSt.Length;
+            bool test=false;
+
+            for (int i = 0; i < length/2; i++)
+            {
+                if (PalindromeSt[i] != PalindromeSt[length - i - 1])
+                    test = false;
+                else
+                    test = true;
+            }
+
+            if (test == true) { Console.WriteLine("On Palindromi"); }
+            else { Console.WriteLine("Ei ole palindromi"); }
+
+
+        }
+        static void teht19()
+        {
+            /*
+            Tee tekstipohjainen Hirsipuu - peli.Voit kovakoodata arvattavan sanan ja toteuta looppi, 
+            jossa käyttäjältä kysytään seuraavaa kirjainta. Muista näyttää aina kirjaimen jälkeen oikein arvatut kirjaimet sanan oikealla kohdalla
+            (käytä esim _ - alaviivaa ei arvattujen kirjainten kohdalla).Voit näyttää myös jo arvatut ei käytetyt -kirjaimet.
+            Päätä itse milloin pelaaja joutuu hirteen. */
+
+            Console.WriteLine("\n\n------ 19 TEHTÄVÄ -----");
+            Console.WriteLine("Hirsipuu peli, arvaa kirjaimia. 7 kertaa voit arvata");
+            char[] Answer = { 'H', 'i', 'r', 's', 'i', 'p', 'u', 'u' };
+            char[] Answer2 = { 'K', 'o', 's', 'm', 'i', 'n', 'e', 'n' };
+            char[] Answer3 = { 'O', 'h', 'j', 'e', 'l', 'm', 'a', 't' };
+
+            char[][] AllAns = new char[3][];
+            AllAns[0] = Answer;
+            AllAns[1] = Answer2;
+            AllAns[2] = Answer3;
+            Random rand = new Random();
+
+            int What = rand.Next(1, 3);
+
+            char[] OutPut = { '_', '_', '_', '_', '_', '_', '_', '_' };
+
+            char Guess = ' ';
+            int Length = AllAns[What].Length;
+            int Amount = 0;
+            int count = 10;
+            while(count != 0)
+            {
+                
+                Guess = char.Parse(Console.ReadLine());
+
+                for (int i = 0; i < Length; i++)
+                {
+                    if (Guess.Equals(char.ToLower(AllAns[What][i]))) {
+                        if (Guess != OutPut[i]) {
+                            OutPut[i] = AllAns[What][i];
+                            Amount++;
+                        }
+                    }
+                    
+                }
+
+                Console.WriteLine(OutPut);
+
+                if (Amount == Length) { Console.WriteLine("You win!"); count = 0; }
+                else { count--; Console.WriteLine(count); }
+                if (count == 0 && Amount != Length) { Console.WriteLine("You Lose!"); }
+            }
         }
     }
 }
