@@ -6,7 +6,7 @@ namespace JAMK.IT
     {
         public static void Eka()
         {
-            /*
+            
             teht1();
             teht2();
             teht3();
@@ -24,7 +24,7 @@ namespace JAMK.IT
             teht15();
             teht16();
             teht17();
-            teht18();*/
+            teht18();
             teht19();
         }
 
@@ -135,8 +135,8 @@ namespace JAMK.IT
             /*
             Auton kulutus on 7.02 litraa 100 kilometrin matkalla ja bensan hinta on 1.595 Euroa. 
             Tee ohjelma, joka tulostaa ajetulla matkalla (kysytään käyttäjältä) kuluvan bensan määrän sekä bensaan menevän rahan määrän.*/
-            Console.WriteLine("\\n------ 6 TEHTÄVÄ -----");
-            Console.WriteLine("Anna matka josta haluat laskea kulutuksen ja kustannukset: ");
+            Console.WriteLine("\n\n------ 6 TEHTÄVÄ -----");
+            Console.WriteLine("Anna matka kilometreinä josta haluat laskea kulutuksen ja kustannukset: ");
             double price = 1.595;
             double Mileage = (7.02 / 100);
             double matka = double.Parse(Console.ReadLine());
@@ -234,7 +234,7 @@ namespace JAMK.IT
             /* Tee ohjelma, joka kysyy käyttäjältä 5 kokonaislukua. Luvut tulee sijoittaa taulukkoon.
             Ohjelman tulee tulostaa annetut luvut käänteisessä järjestyksessä.*/
             Console.WriteLine("\n\n------ 12 TEHTÄVÄ -----");
-            Console.WriteLine("Anna 5 kokonaisluku: ");
+            Console.WriteLine("Anna 5 kokonaislukua jotka haluat suuruusjärjestykseen: ");
             const int Amount = 5;
             int[] IntArray = new int[Amount];
 
@@ -255,7 +255,7 @@ namespace JAMK.IT
             /* Mäkihypyssä käytetään viittä arvostelutuomaria. Kirjoita ohjelma, joka kysyy arvostelupisteet yhdelle hypylle ja tulostaa tyylipisteiden summan siten, 
             että summasta on vähennetty pois pienin ja suurin tyylipiste.*/
             Console.WriteLine("\n\n------ 13 TEHTÄVÄ -----");
-            Console.WriteLine("Anna 5 kokonaisluku: ");
+            Console.WriteLine("Anna 5 kokonaislukua jotka haluat laskea yhteen vähentäen pienimmän ja isoimman pois.: ");
             const int Amount = 5;
             int[] IntArray = new int[Amount];
 
