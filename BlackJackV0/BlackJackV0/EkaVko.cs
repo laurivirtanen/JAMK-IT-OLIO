@@ -1,12 +1,12 @@
 ﻿using System;
-
+using System.Text.RegularExpressions;
 namespace JAMK.IT
 {
     class EkaVko
     {
         public static void Eka()
         {
-            
+
             teht1();
             teht2();
             teht3();
@@ -56,7 +56,7 @@ namespace JAMK.IT
             Console.WriteLine("\n\n------ 2 TEHTÄVÄ -----");
             /*Tee ohjelma, jossa annetaan oppilaalle koulunumero seuraavan taulukon mukaan 
             (pistemäärä kysytään ja ohjelma tulostaa numeron):*/
-            Console.WriteLine("Anna pistemäärä(0-12) > ");
+             Console.WriteLine("Anna pistemäärä(0-12) > ");
             int Points = int.Parse(Console.ReadLine());
             switch (Points)
             {
@@ -120,13 +120,12 @@ namespace JAMK.IT
             Anna sekunnit > 3661 [Enter]
             Antamasi sekunttiaika voidaan ilmaista muodossa: 1 tunti 1 minuutti 1 sekuntti*/
             Console.WriteLine("\n\n------ 5 TEHTÄVÄ -----");
-            Console.WriteLine("Anna sekunnit > ");
-            double Secs = double.Parse(Console.ReadLine());
+            Console.WriteLine("Anna sekunnit jotka haluat kääntää tunneiksi, minuuteiksi ja sekunneiksi > ");
+            int Secs = int.Parse(Console.ReadLine());
 
             TimeSpan time = TimeSpan.FromSeconds(Secs);
-            string TimeString = time.ToString(@"hh\:mm\:ss\:fff");
-            Console.Write(TimeString);
-            
+            string TimeString = time.ToString(@"hh\:mm\:ss");
+            Console.WriteLine("{0} tuntia {1} minuuttia {2} sekuntia", time.Hours, time.Minutes,time.Seconds);
 
 
         }
@@ -200,7 +199,7 @@ namespace JAMK.IT
             Käy sovelluksessa taulukko läpi ja tulosta ruutuun "HEP"-sana aina kun taulukossa oleva luku on parillinen.*/
 
             Console.WriteLine("\n\n------ 10 TEHTÄVÄ -----");
-            Console.WriteLine("Anna lukuja jotka haluat laskea yhteen(0 lopettaa): ");
+            Console.WriteLine("HEP Machine: ");
             int[] IntArray = { 1, 2, 33, 44, 55, 68, 77, 96, 100 };
             for (int i = 0; i < IntArray.Length; i++)
             {
@@ -270,7 +269,7 @@ namespace JAMK.IT
                 Summa += IntArray[i];
             }
 
-            Console.WriteLine(Summa);
+            Console.WriteLine("Summa: "+Summa);
         }
         static void teht14()
         {
@@ -286,9 +285,9 @@ namespace JAMK.IT
             int arvosana4 = 0;
             int arvosana5 = 0;
 
-            while (Arvosana >= 0)
+            while (Arvosana >= 0 && Arvosana <6)
             {
-                Console.WriteLine("Anna numero");
+                Console.WriteLine("Anna numero(0-5): ");
                 Arvosana = int.Parse(Console.ReadLine());
                 switch (Arvosana)
                 {
@@ -443,11 +442,21 @@ namespace JAMK.IT
             int[] ThirdArray = new int[10];
             FirstArray.CopyTo(ThirdArray, 0);
             SecondArray.CopyTo(ThirdArray, 5);
-
+            Console.WriteLine("Ensimmäinen taulukko: ");
             Array.Sort(ThirdArray);
-
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(FirstArray[i]);
+            }
+            Console.WriteLine("Toinen taulukko: ");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(SecondArray[i]);
+            }
+            Console.WriteLine("Kolmas taulukko: ");
             for (int i = 0; i < 10; i++)
             {
+                
                 Console.WriteLine(ThirdArray[i]);
             }
         }
@@ -457,21 +466,28 @@ namespace JAMK.IT
             Sovelluksen tulee ilmoittaa käyttäjälle oliko annettu merkkijono palidromi. */
             Console.WriteLine("\n\n------ 18 TEHTÄVÄ -----");
             Console.WriteLine("Anna merkkijono palindromi tarkastusta varten");
+            string RegRemove = "[^a-zA-Z0-9]";
+            string UserInput = Console.ReadLine().ToLower();
+            int length = UserInput.Length;
+            bool PalTest = false;
 
-            string PalindromeSt = Console.ReadLine();
-            int length = PalindromeSt.Length;
-            bool test=false;
+            // uses RegEx to remove all non numbers/letters
+            UserInput = Regex.Replace(UserInput, RegRemove, "");
+
+            Console.Write(UserInput);//test
+            length = UserInput.Length;
 
             for (int i = 0; i < length/2; i++)
             {
-                if (PalindromeSt[i] != PalindromeSt[length - i - 1])
-                    test = false;
+                if (UserInput[i] != UserInput[length - i-1])
+                    PalTest = false;
                 else
-                    test = true;
+                    PalTest = true;
+               
             }
 
-            if (test == true) { Console.WriteLine("On Palindromi"); }
-            else { Console.WriteLine("Ei ole palindromi"); }
+            if (PalTest == true) { Console.WriteLine(" On Palindromi"); }
+            else {Console.WriteLine(" Ei ole palindromi"); }
 
 
         }
@@ -484,25 +500,27 @@ namespace JAMK.IT
             Päätä itse milloin pelaaja joutuu hirteen. */
 
             Console.WriteLine("\n\n------ 19 TEHTÄVÄ -----");
-            Console.WriteLine("Hirsipuu peli, arvaa kirjaimia. 7 kertaa voit arvata");
+            Console.WriteLine("Hirsipuu peli, arvaa kirjaimia. 10 kertaa voit arvata");
             char[] Answer = { 'H', 'i', 'r', 's', 'i', 'p', 'u', 'u' };
             char[] Answer2 = { 'K', 'o', 's', 'm', 'i', 'n', 'e', 'n' };
             char[] Answer3 = { 'O', 'h', 'j', 'e', 'l', 'm', 'a', 't' };
+
+            Random rand = new Random();
 
             char[][] AllAns = new char[3][];
             AllAns[0] = Answer;
             AllAns[1] = Answer2;
             AllAns[2] = Answer3;
-            Random rand = new Random();
 
-            int What = rand.Next(1, 3);
+            int AnsPicker = rand.Next(1, 3);
 
             char[] OutPut = { '_', '_', '_', '_', '_', '_', '_', '_' };
 
             char Guess = ' ';
-            int Length = AllAns[What].Length;
+            int Length = AllAns[AnsPicker].Length;
             int Amount = 0;
             int count = 10;
+
             while(count != 0)
             {
                 
@@ -510,9 +528,9 @@ namespace JAMK.IT
 
                 for (int i = 0; i < Length; i++)
                 {
-                    if (Guess.Equals(char.ToLower(AllAns[What][i]))) {
+                    if (Guess.Equals(char.ToLower(AllAns[AnsPicker][i]))) {
                         if (Guess != OutPut[i]) {
-                            OutPut[i] = AllAns[What][i];
+                            OutPut[i] = AllAns[AnsPicker][i];
                             Amount++;
                         }
                     }
