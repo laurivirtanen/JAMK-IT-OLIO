@@ -7,7 +7,7 @@ namespace JAMK.IT
         public static void Eka()
         {
 
-            teht1();
+            /*teht1();
             teht2();
             teht3();
             teht4();
@@ -25,7 +25,7 @@ namespace JAMK.IT
             teht16();
             teht17();
             teht18();
-            teht19();
+            //teht19();*/
         }
 
         static void teht1()
@@ -476,15 +476,15 @@ namespace JAMK.IT
 
             Console.Write(UserInput);//test
             length = UserInput.Length;
-
+            
             for (int i = 0; i < length/2; i++)
             {
                 if (UserInput[i] != UserInput[length - i-1])
                     PalTest = false;
                 else
                     PalTest = true;
-               
             }
+            
 
             if (PalTest == true) { Console.WriteLine(" On Palindromi"); }
             else {Console.WriteLine(" Ei ole palindromi"); }

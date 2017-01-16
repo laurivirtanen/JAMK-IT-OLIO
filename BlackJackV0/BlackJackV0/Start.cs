@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace JAMK.IT
 {
-    class Start
+    public class Start
     {
-        static void Main()
+        public static void Main()
         {
             /*Lottery.PlayLotto();
-            BlackJack.PlayBlackJack();*/
-            EkaVko.Eka();
+            BlackJack.PlayBlackJack();
+            EkaVko.Eka();*/
+            TokaVko.Toka();
         }
     }
 }
