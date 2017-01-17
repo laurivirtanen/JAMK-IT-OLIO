@@ -84,9 +84,9 @@ namespace JAMK.IT
         { 
 
 
-            Console.WriteLine("Turn the TV on?");
-            int choice = int.Parse(Console.ReadLine());
-            if (choice==1)
+            Console.WriteLine("Turn the TV on? (y turns it on)");
+            char choice = char.Parse(Console.ReadLine());
+            if (choice=='y')
             {
               return IsOn = true;
             }
@@ -141,6 +141,53 @@ namespace JAMK.IT
         {
             get { return firstname + " " + lastname; }
 
+        }
+    }
+
+    public class Oven
+    {
+
+        private bool isCooking;
+        public bool IsOn { get; set; }
+        public float Temperature { get; set; }
+
+        private bool IsCooking
+        {
+            get { return isCooking; }
+            set
+            {
+                if (IsOn == true && (Temperature > 0f && Temperature <=300f) ) { isCooking = true; }
+                else {
+                    Console.Write("\nERROR\n"); isCooking = false;
+                }
+            }
+
+        }
+
+        public bool OnSwitch()
+        {
+          
+            char daa;
+            Console.WriteLine("Turn the oven on? (y turns it on)");
+            daa = char.Parse(Console.ReadLine());
+
+            if (daa == 'y') { Console.WriteLine("OVEN Powering On"); return IsOn = true; }
+
+            else { return false; }
+        }
+
+        public bool TurnOn(bool OnCheck, float TempCheck)
+        {
+            char daa;
+            Console.WriteLine("Do you want to start baking?");
+            daa = char.Parse(Console.ReadLine());
+            if (daa == 'y') {
+                OnCheck = true;
+                if (OnCheck == true && TempCheck > 0f) { Console.WriteLine("SUCCESS"); return IsCooking = true; }
+             else { Console.WriteLine("Im sorry the oven isnt configured correctly"); return false; }
+
+            }
+            else Console.WriteLine("Im sorry "); return false;
         }
     }
 

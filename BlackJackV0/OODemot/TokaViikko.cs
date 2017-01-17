@@ -8,11 +8,30 @@ using JAMK.IT;
 
 namespace OODemot
 {
-    class KiuasTehtava
+    class TokaViikko
     {
         static void Main(string[] args)
         {
 
+            Uuni();
+            Students();
+            Vehicle();
+            KolmeKonetta();
+
+        }
+
+        static void Uuni()
+        {
+            Oven uuni = new Oven();
+            uuni.Temperature = 25.5f;
+            uuni.OnSwitch();
+            uuni.TurnOn(uuni.IsOn, uuni.Temperature);
+
+            Console.WriteLine(uuni.IsOn.ToString() + uuni.Temperature);
+        }
+
+        static void Students()
+        {
             List<Student> students = new List<Student>();
 
             Student student1 = new Student();
@@ -31,7 +50,7 @@ namespace OODemot
             student1.lastname = "Mortensen";
 
 
-            foreach(var Student in students)
+            foreach (var Student in students)
             {
 
                 Console.WriteLine("--Student--");
@@ -39,6 +58,10 @@ namespace OODemot
                 Console.WriteLine(Student.Age);
                 Console.WriteLine(Student.Avg);
             }
+        }
+
+        static void Vehicle()
+        {
 
             Vehicle mopedi = new Vehicle();
 
@@ -49,9 +72,11 @@ namespace OODemot
             mopedi.AllData = mopedi.AllData;
             mopedi.AllDemDatas(mopedi.AllData);
             mopedi.PrintData();
-            
 
+        }
 
+        static void KolmeKonetta()
+        {
             Pesukone pesukone = new Pesukone();
             pesukone.IsOn = true;
             pesukone.ValitseOhjelma();
@@ -67,7 +92,6 @@ namespace OODemot
             ekaKiuas.Temperature = 70;
             Console.WriteLine("Kosteus {0} Lämpötila {1} ", ekaKiuas.Humidity, ekaKiuas.Temperature);
             Start.Main();
-
         }
     }
 }
