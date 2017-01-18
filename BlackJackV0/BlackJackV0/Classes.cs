@@ -142,6 +142,14 @@ namespace JAMK.IT
             get { return firstname + " " + lastname; }
 
         }
+
+        public Student(string fName, string lName, int age, float avg){
+            firstname = fName;
+            lastname = lName;
+            Age = age;
+            Avg = avg;
+
+            }
     }
 
     public class Oven
@@ -189,6 +197,26 @@ namespace JAMK.IT
             }
             else Console.WriteLine("Im sorry "); return false;
         }
+    }
+
+    public class Hissi
+    {
+        private int maxFloor = 5;
+        private int minFloor = 1;
+
+        private int floor;
+
+        public int FloorSelector
+        {
+            get {  return floor; }
+            set { if (value <= maxFloor && value >= minFloor) { floor = value;  Console.WriteLine("Hissi liikkuu kerrokseen: {0}", floor);  } }
+        }
+
+    }
+
+    public class DynamoHissi : Hissi
+    {
+        private string Color = "Black";
     }
 
 }
