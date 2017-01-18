@@ -13,16 +13,12 @@ namespace OODemot
         public static void Tokat()
         {
 
-            Uuni();
+            
             Vehicle();
             KolmeKonetta();
 
         }
-
         
-
-        
-
         static void Vehicle()
         {
 
