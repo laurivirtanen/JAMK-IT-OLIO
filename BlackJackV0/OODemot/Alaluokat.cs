@@ -10,6 +10,36 @@ namespace OODemot
     class Alaluokat
     {
 
+        public static void RadioStuff()
+        {
+            Radio raario = new Radio(5f, 5f, true);
+
+            while (raario.IsRadioOn == true)
+            {
+                Console.WriteLine("Radio Frequency: {0} - Volume: {1}", raario.Frequency, raario.Volume);
+
+
+                Console.WriteLine("1 to change frequency, 2 to change volume. Other keys shuts the radio down");
+                string liner = Console.ReadLine();
+                int daa;
+                bool result = int.TryParse(liner, out daa);
+                switch (daa)
+                {
+                    case 1:
+                        Console.WriteLine("Old Frequency: {0} Input new Frequency(2000-26000): ", raario.Frequency);
+                        raario.Frequency = int.Parse(Console.ReadLine());
+                        break;
+                    case 2:
+                        Console.WriteLine("Old Volume: {0} Input new Volume(0-10): ", raario.Volume);
+                        raario.Volume = int.Parse(Console.ReadLine());
+                        break;
+                    default:
+                        raario.IsRadioOn = false;
+                        break;
+                }
+            }
+        }
+
         public static void BikeQuest() {
             Bike mopedi = new Bike("Pyörö", "Mahtava", "Keltainen", 252, true, "upeeta");
             Console.WriteLine(mopedi.ToString());

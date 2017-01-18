@@ -359,6 +359,40 @@ namespace JAMK.IT
         }
     }
 
+    public class Radio
+    {
+        private const float minfreq = 2000;
+        private const float maxfreq = 26000;
+        private float volume = 0;
+        private float frequency = minfreq;
+        public bool IsRadioOn { get; set; }
+        public float Volume
+        {
+            get { return volume; }
+            set
+            {
+                if (IsRadioOn == true) { if (value >= 0f && value <= 10f) volume = value;}
+               
+            }
+        }
+        public float Frequency
+        {
+            get { return frequency; }
+            set { if(IsRadioOn == true) {
+                    if (value > maxfreq) { frequency = minfreq; }
+                    else if (value < minfreq) { frequency = maxfreq; }
+                    else { frequency = value; }
+                }
+            }
+        }
 
+        public Radio() { }
+        public Radio(float vol, float freq, bool on)
+        {
+            Volume = vol;
+            Frequency = freq;
+            IsRadioOn = on;
+        }
+    }
 
 }

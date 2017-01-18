@@ -12,6 +12,7 @@ namespace OODemot
     {
         public static void Main()
         {
+            Alaluokat.RadioStuff();
             Alaluokat.BikeQuest();
             /*TokaViikko.Tokat();
             Alaluokat.BossTester();
