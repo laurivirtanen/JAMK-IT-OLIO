@@ -12,10 +12,11 @@ namespace OODemot
     {
         public static void Main()
         {
-            //TokaViikko.Tokat();
-
-
-            Alaluokat.Tester();
+            Alaluokat.BikeQuest();
+            /*TokaViikko.Tokat();
+            Alaluokat.BossTester();
+            Alaluokat.Vahvistaja();
+           // Alaluokat.Tester();*/
         }
 
     }

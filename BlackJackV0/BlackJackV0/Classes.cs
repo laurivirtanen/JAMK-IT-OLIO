@@ -80,6 +80,9 @@ namespace JAMK.IT
 
         }
 
+
+        
+
         public bool OnSwitch()
         { 
 
@@ -92,6 +95,7 @@ namespace JAMK.IT
             }
             else { return IsOn = false; }
         }
+
 
         public int ChangeChannel()
         {
@@ -208,15 +212,153 @@ namespace JAMK.IT
 
         public int FloorSelector
         {
-            get {  return floor; }
-            set { if (value <= maxFloor && value >= minFloor) { floor = value;  Console.WriteLine("Hissi liikkuu kerrokseen: {0}", floor);  } }
+            get { return floor; }
+            set { if (value <= maxFloor && value >= minFloor) { floor = value; }
+               
+            } 
         }
+        
 
     }
 
     public class DynamoHissi : Hissi
     {
-        private string Color = "Black";
+        public string Color { get; set; }
+
+        public DynamoHissi()
+        {
+        }
+        public DynamoHissi(string lallalaa, int Valinta)
+        {
+            FloorSelector = Valinta;
+            Color = lallalaa;
+        }
     }
+
+    public class Vahvistin
+    {
+        private int maxVolume = 100;
+        private int minvolume = 0;
+
+        private int volume;
+
+        public int VolumeSelector
+        {
+            get { return volume; }
+            set
+            {
+                if (value < minvolume) { volume = 0; }
+                else if (value > maxVolume) { volume = 100; }
+                else { volume = value; }
+
+
+            }
+        }
+
+        public Vahvistin()
+        {
+
+        }
+
+        public Vahvistin(int vol)
+        {
+            volume = vol;
+
+        }
+    }
+
+    public class Employee
+    {
+        public string Name { get; set; }
+        public string Profession { get; set; }
+        public double Salary { get; set; }
+
+        public Employee() { }
+        public Employee(string name, string prof, double sal)
+        {
+            Name = name;
+            Profession = prof;
+            Salary = sal;
+        }
+        public override string ToString()
+        {
+            return Name + " " + Profession + " " + Salary;
+        }
+    }
+    public class Boss : Employee
+    {
+        public int Bonus { get; set; }
+        public string Car { get; set; }
+
+        public Boss() { }
+        public Boss(string name, string prof, double sal, int bon, string car) : base(name, prof, sal)
+        {
+            Bonus = bon;
+            Car = car;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + " " + Bonus + " " + Car;
+        }
+
+    }
+
+    public class Ajoneuvo
+    {
+        public string Name { get; set; }
+        public string Model { get; set; }
+        public string Color { get; set; }
+        public int Year { get; set; }
+    }
+
+    public class Bike : Ajoneuvo
+    {
+        public bool HasGears { get; set; }
+        private string gearModel;
+
+        public string GearModel {
+            get { return gearModel; }
+            set { if (HasGears == true) gearModel = value; else gearModel = " ";  } }
+
+
+        public Bike(string name,string model, string color, int year, bool gears, string gModel)
+        {
+            Name = name;
+            Model = model;
+            Color = color;
+            Year = year;
+            HasGears = gears;
+            GearModel = gModel;
+        }
+
+        public override string ToString()
+        {
+            return "Bike info: \n\t Name: "+ Name + " " + Model + " " + Color + " Year:" + Year + " Gears: " + HasGears + " Gear Model: " ;
+        }
+    }
+    public class Boat : Ajoneuvo
+    {
+        public int SeatCount { get; set; }
+        private string BoatType { get; set; }
+
+
+        public Boat(string name, string model, string color, int year, int seats, string boatType)
+        {
+            Name = name;
+            Model = model;
+            Color = color;
+            Year = year;
+            SeatCount = seats;
+            BoatType = boatType;
+        }
+
+        public override string ToString()
+        {
+            return "Boat information: \n \t Name: "+ Name + "| Model: " + Model + "| Color: " + Color + "| Year: " + Year + "| Seats: " + SeatCount + "| BoatType: ";
+        }
+    }
+
+
 
 }
