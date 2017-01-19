@@ -395,4 +395,33 @@ namespace JAMK.IT
         }
     }
 
+
+    public class Bottom
+    {
+        private string place = "Unknown";
+        public string Name { get; set; }
+        public int Year { get; set; }
+        public string Placement
+        {
+            get { return place; }
+            set { }
+        }
+    }
+
+    public class Kirja : Bottom
+    {
+        public int PageNumber { get; set; }
+        public string Author { get; set; }
+
+    }
+
+
+    public class Cd : Bottom
+    {
+        public string Type { get; set; } // movie,cd, dvd etc.
+
+
+
+
+    }
 }
