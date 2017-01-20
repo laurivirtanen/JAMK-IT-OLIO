@@ -9,7 +9,10 @@ namespace OODemot
 {
     class Alaluokat
     {
-
+        //5 TEHTÄVÄ
+        //5 TEHTÄVÄ
+        //5 TEHTÄVÄ
+        //5 TEHTÄVÄ
         public static void RadioStuff()
         {
             Radio raario = new Radio(5f, 5f, true);
@@ -39,14 +42,20 @@ namespace OODemot
                 }
             }
         }
-
+        // 4 TEHTÄVÄ
+        // 4 TEHTÄVÄ
+        // 4 TEHTÄVÄ
+        // 4 TEHTÄVÄ
         public static void BikeQuest() {
             Bike mopedi = new Bike("Pyörö", "Mahtava", "Keltainen", 252, true, "upeeta");
             Console.WriteLine(mopedi.ToString());
             Boat boaty = new Boat("Laiva", "McBoaty", "HotPink", 1992, 4, "Motorboater");
             Console.WriteLine(boaty.ToString());
         }
-
+        //3 TEHTÄVÄ
+        //3 TEHTÄVÄ
+        //3 TEHTÄVÄ
+        //3 TEHTÄVÄ
         public static void BossTester()
         {
             Boss lasse = new Boss("Lasse Mortensen", "Koodaaja", 5000, 53533, "mopedi");
@@ -60,6 +69,10 @@ namespace OODemot
             Console.WriteLine(empl.ToString());
         }
 
+        //2 TEHTÄVÄ
+        //2 TEHTÄVÄ
+        //2 TEHTÄVÄ
+        //2 TEHTÄVÄ
         public static void Vahvistaja()
         {
             Vahvistin vahvari = new Vahvistin(40);

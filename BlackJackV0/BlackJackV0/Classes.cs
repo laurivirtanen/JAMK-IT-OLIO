@@ -235,6 +235,8 @@ namespace JAMK.IT
         }
     }
 
+
+    //2 TEHTÄVÄ
     public class Vahvistin
     {
         private int maxVolume = 100;
@@ -266,7 +268,9 @@ namespace JAMK.IT
 
         }
     }
-
+    //3 TEHTÄVÄ
+    //3 TEHTÄVÄ
+    //3 TEHTÄVÄ
     public class Employee
     {
         public string Name { get; set; }
@@ -303,7 +307,10 @@ namespace JAMK.IT
         }
 
     }
-
+    //4 TEHTÄVÄ
+    //4 TEHTÄVÄ
+    //4 TEHTÄVÄ
+    //4 TEHTÄVÄ
     public class Ajoneuvo
     {
         public string Name { get; set; }
@@ -359,6 +366,10 @@ namespace JAMK.IT
         }
     }
 
+    //5 TEHTÄVÄ
+    //5 TEHTÄVÄ
+    //5 TEHTÄVÄ
+    //5 TEHTÄVÄ
     public class Radio
     {
         private const float minfreq = 2000;
